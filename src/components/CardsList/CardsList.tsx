@@ -1,28 +1,29 @@
-import { accountantsAtom, resultsPerPageAtom } from "api";
 import { Card } from "components/Card/Card";
 import { CardSkeleton } from "components/Card/Card.styles";
 import { Wrapper } from "components/CardsList/CardsList.styles";
-import { useAtom } from "jotai";
+import { Fragment } from "react";
+import { useInfiniteAccountants } from "useInfiniteAccountants";
+
+const renderNSkeletons = (num: number) =>
+  Array.from(Array(num).keys()).map(() => <CardSkeleton />);
 
 export const CardsList = () => {
-  const [data] = useAtom(accountantsAtom);
-  const [count] = useAtom(resultsPerPageAtom);
+  const { data, isLoading, isFetchingNextPage } = useInfiniteAccountants();
 
-  if (data.results.length < 1) {
-    return (
-      <Wrapper>
-        {Array.from(Array(count).keys()).map(() => (
-          <CardSkeleton />
-        ))}
-      </Wrapper>
-    );
+  if (isLoading) {
+    return <Wrapper>{renderNSkeletons(5)}</Wrapper>;
   }
 
   return (
     <Wrapper>
-      {data.results.map((accountant) => (
-        <Card key={accountant.login.uuid} accountant={accountant} />
+      {data?.pages.map((page, i) => (
+        <Fragment key={i}>
+          {page.results.map((accountant) => (
+            <Card key={accountant.login.uuid} accountant={accountant} />
+          ))}
+        </Fragment>
       ))}
+      {isFetchingNextPage && renderNSkeletons(5)}
     </Wrapper>
   );
 };

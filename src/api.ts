@@ -1,6 +1,3 @@
-import { atom } from "jotai";
-import { atomsWithQuery } from "jotai-tanstack-query";
-
 export type AccountantType = {
   cell: string; // numer telefonu
   name: {
@@ -15,7 +12,7 @@ export type AccountantType = {
   gender: "male" | "female";
 };
 
-type AccountantResponseType = {
+export type AccountantResponseType = {
   results: AccountantType[];
   info: {
     page: number;
@@ -24,30 +21,8 @@ type AccountantResponseType = {
 
 const API_URL = "https://randomuser.me/api/";
 
-export const pageAtom = atom(1);
-export const resultsPerPageAtom = atom(10);
-
-export const [accountantsAtom] = atomsWithQuery((get) => ({
-  queryKey: ["accountants", get(pageAtom)],
-  queryFn: async ({ queryKey: [, page] }) => {
-    const res = await fetch(`${API_URL}?seed=abc&page=${page}&results=10`);
-    const data: AccountantResponseType = await res.json();
-
-    return {
-      info: {
-        ...data.info,
-      },
-      // extract only the data we need
-      results: data.results.map(
-        ({ cell, name, email, picture, login, gender }) => ({
-          cell,
-          name,
-          email,
-          picture,
-          login,
-          gender,
-        })
-      ),
-    };
-  },
-}));
+export const fetchData = async (page: number) => {
+  const response = await fetch(`${API_URL}?seed=abc&page=${page}&results=5`);
+  const data: AccountantResponseType = await response.json();
+  return data;
+};

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { StyledButton } from "components/ui.styles";
+import { useInfiniteAccountants } from "useInfiniteAccountants";
 
 const Wrapper = styled.div`
   margin: 100px 0;
@@ -9,9 +10,13 @@ const Wrapper = styled.div`
 `;
 
 export const LoadMoreButton = () => {
+  const { fetchNextPage } = useInfiniteAccountants();
+
   return (
     <Wrapper>
-      <StyledButton>Pobierz więcej</StyledButton>
+      <StyledButton onClick={() => fetchNextPage()}>
+        Pobierz więcej
+      </StyledButton>
     </Wrapper>
   );
 };
