@@ -1,4 +1,4 @@
-const customMQ = (minWidth: number) => `@media (max-width: ${minWidth}px)`;
+const customMQ = (minWidth: number) => `@media (min-width: ${minWidth}px)`;
 
 export const theme = {
   mq: {

@@ -1,27 +1,29 @@
 import { ReactNode } from "react";
 import inFaktLogo from "assets/infakt_logo.png";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const StyledNav = styled.nav`
+const layoutPadding = css`
   padding: 16px 28px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 
-  @media (min-width: 1024px) {
-    padding: 48px 84px;
+  ${({ theme }) => theme.mq.sm} {
+    padding: 24px 42px;
   }
-  ${({ theme }) => theme.mq.md} {
-    background-color: red;
+
+  ${({ theme }) => theme.mq.lg} {
+    padding: 48px 84px;
   }
 `;
 
-const StyledMainContent = styled.main`
-  padding: 16px 28px;
+const StyledNav = styled.nav`
+  ${layoutPadding};
 
-  @media (min-width: 1024px) {
-    padding: 48px 84px;
-  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+const StyledMainContent = styled.main`
+  ${layoutPadding};
 `;
 
 type LayoutProps = {
