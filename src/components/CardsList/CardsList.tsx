@@ -5,7 +5,7 @@ import { Fragment } from "react";
 import { useInfiniteAccountants } from "useInfiniteAccountants";
 
 const renderNSkeletons = (num: number) =>
-  Array.from(Array(num).keys()).map(() => <CardSkeleton />);
+  Array.from(Array(num).keys()).map((item) => <CardSkeleton key={item} />);
 
 export const CardsList = () => {
   const { data, isLoading, isFetchingNextPage } = useInfiniteAccountants();
