@@ -1,12 +1,25 @@
+import { StyledButton } from "components/ui.styles";
 import styled from "styled-components";
 
 export const Wrapper = styled.li`
+  margin: 0 auto;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 300px;
   height: 376px;
   border: 1px solid #e4e6e8;
   border-radius: 16px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+
+  ${StyledButton} {
+    margin-top: 24px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 export const CardHeader = styled.div`
@@ -63,23 +76,5 @@ export const DetailsWrapper = styled.div`
     .currency {
       font-size: 1.2rem;
     }
-  }
-`;
-
-export const DetailsLink = styled.a`
-  margin-top: 24px;
-  display: block;
-  width: 151px;
-  height: 36px;
-  border-radius: 8px;
-  background-color: #e3f2fd;
-  color: ${({ theme }) => theme.font.colors.brand};
-  font-size: ${({ theme }) => theme.font.size.sm};
-  text-align: center;
-  line-height: 36px;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
   }
 `;

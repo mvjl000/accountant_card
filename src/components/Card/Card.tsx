@@ -4,8 +4,8 @@ import {
   CardHeader,
   NameWrapper,
   DetailsWrapper,
-  DetailsLink,
 } from "components/Card/Card.styles";
+import { StyledButton } from "components/ui.styles";
 
 export const Card = () => {
   return (
@@ -38,7 +38,9 @@ export const Card = () => {
           </p>
         </div>
       </DetailsWrapper>
-      <DetailsLink href="/accountant">Dowiedz się więcej</DetailsLink>
+      <StyledButton as="a" href="/accountant">
+        Dowiedz się więcej
+      </StyledButton>
     </Wrapper>
   );
 };

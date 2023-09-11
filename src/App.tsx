@@ -1,11 +1,11 @@
-import { Card } from "components/Card/Card";
+import { CardsList } from "components/CardsList/CardsList";
+import { LoadMoreButton } from "components/LoadMoreButton";
 
 export const App = () => {
   return (
     <>
-      <ul>
-        <Card />
-      </ul>
+      <CardsList />
+      <LoadMoreButton />
     </>
   );
 };
