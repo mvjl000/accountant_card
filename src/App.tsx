@@ -1,3 +1,11 @@
+import { Card } from "components/Card/Card";
+
 export const App = () => {
-  return <h1>Hello world</h1>;
+  return (
+    <>
+      <ul>
+        <Card />
+      </ul>
+    </>
+  );
 };
