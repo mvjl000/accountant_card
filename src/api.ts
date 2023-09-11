@@ -24,7 +24,8 @@ type AccountantResponseType = {
 
 const API_URL = "https://randomuser.me/api/";
 
-const pageAtom = atom(1);
+export const pageAtom = atom(1);
+export const resultsPerPageAtom = atom(10);
 
 export const [accountantsAtom] = atomsWithQuery((get) => ({
   queryKey: ["accountants", get(pageAtom)],

@@ -1,5 +1,5 @@
 import { StyledButton } from "components/ui.styles";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Wrapper = styled.li`
   margin: 0 auto;
@@ -77,4 +77,27 @@ export const DetailsWrapper = styled.div`
       font-size: 1.2rem;
     }
   }
+`;
+
+const fade = keyframes`
+  0% {
+    background-color: #f1f2f2;
+  }
+  50% {
+    background-color: #e4e6e8;
+  }
+  100% {
+    background-color: #f1f2f2;
+  }
+`;
+
+export const CardSkeleton = styled.li`
+  margin: 0 auto;
+  width: 300px;
+  height: 376px;
+  background-color: #e4e6e8;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  animation: ${fade} 2s infinite;
 `;
