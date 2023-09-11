@@ -7,6 +7,7 @@ import {
   DetailsWrapper,
 } from "components/Card/Card.styles";
 import { StyledButton } from "components/ui.styles";
+import { useRef } from "react";
 
 const generateRandomPrice = () => {
   const MIN = 100;
@@ -20,6 +21,7 @@ type CardProps = {
 };
 
 export const Card = ({ accountant }: CardProps) => {
+  const price = useRef(generateRandomPrice());
   const { name, email, cell } = accountant;
   const accountantName = `${name.first} ${name.last}`;
 
@@ -46,7 +48,7 @@ export const Card = ({ accountant }: CardProps) => {
         <div>
           <p className="label">Średnia cena netto usługi / m-c</p>
           <p className="value">
-            {generateRandomPrice()},00 <span className="currency">PLN</span>
+            {price.current},00 <span className="currency">PLN</span>
           </p>
         </div>
       </DetailsWrapper>
