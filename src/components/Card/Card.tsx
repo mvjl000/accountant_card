@@ -22,7 +22,7 @@ type CardProps = {
 
 export const Card = ({ accountant }: CardProps) => {
   const price = useRef(generateRandomPrice());
-  const { name, email, cell } = accountant;
+  const { name, email, cell, gender } = accountant;
   const accountantName = `${name.first} ${name.last}`;
 
   return (
@@ -32,7 +32,9 @@ export const Card = ({ accountant }: CardProps) => {
           <img src={accountant.picture.medium} alt={accountantName} />
         </CardImage>
         <NameWrapper>
-          <p className="label">Twoja księgowa</p>
+          <p className="label">
+            {gender === "female" ? "Twoja księgowa" : "Twój księgowy"}
+          </p>
           <p className="name">{accountantName}</p>
         </NameWrapper>
       </CardHeader>
