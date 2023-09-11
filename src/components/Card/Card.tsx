@@ -1,3 +1,4 @@
+import { AccountantType } from "api";
 import {
   Wrapper,
   CardImage,
@@ -7,34 +8,45 @@ import {
 } from "components/Card/Card.styles";
 import { StyledButton } from "components/ui.styles";
 
-export const Card = () => {
+const generateRandomPrice = () => {
+  const MIN = 100;
+  const MAX = 500;
+
+  return Math.floor(Math.random() * (MAX - MIN) + MIN);
+};
+
+type CardProps = {
+  accountant: AccountantType;
+};
+
+export const Card = ({ accountant }: CardProps) => {
+  const { name, email, cell } = accountant;
+  const accountantName = `${name.first} ${name.last}`;
+
   return (
     <Wrapper>
       <CardHeader>
         <CardImage>
-          <img
-            src={"https://randomuser.me/api/portraits/med/women/80.jpg"}
-            alt="Some person"
-          />
+          <img src={accountant.picture.medium} alt={accountantName} />
         </CardImage>
         <NameWrapper>
           <p className="label">Twoja księgowa</p>
-          <p className="name">Dominika Zuber</p>
+          <p className="name">{accountantName}</p>
         </NameWrapper>
       </CardHeader>
       <DetailsWrapper>
         <div>
           <p className="label">E-mail</p>
-          <p className="value">dominika.zuber@infakt.pl</p>
+          <p className="value">{email}</p>
         </div>
         <div>
           <p className="label">Telefon</p>
-          <p className="value">+48 123 456 789</p>
+          <p className="value">{cell}</p>
         </div>
         <div>
           <p className="label">Średnia cena netto usługi / m-c</p>
           <p className="value">
-            350,00 <span className="currency">PLN</span>
+            {generateRandomPrice()},00 <span className="currency">PLN</span>
           </p>
         </div>
       </DetailsWrapper>

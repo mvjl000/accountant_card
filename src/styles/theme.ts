@@ -6,6 +6,7 @@ export const theme = {
     sm: customMQ(1024),
     md: customMQ(1280),
     lg: customMQ(1440),
+    xl: customMQ(1800),
   },
   font: {
     size: {

@@ -6,12 +6,10 @@ import { useAtom } from "jotai";
 export const CardsList = () => {
   const [data] = useAtom(accountantsAtom);
 
-  console.log("DATA>>>", data);
-
   return (
     <Wrapper>
-      {Array.from(Array(10).keys()).map((item) => (
-        <Card key={item} />
+      {data.results.map((accountant) => (
+        <Card key={accountant.login.uuid} accountant={accountant} />
       ))}
     </Wrapper>
   );

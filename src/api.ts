@@ -1,7 +1,7 @@
-import { atom, useAtom } from "jotai";
+import { atom } from "jotai";
 import { atomsWithQuery } from "jotai-tanstack-query";
 
-type AccountantType = {
+export type AccountantType = {
   cell: string; // numer telefonu
   name: {
     first: string;

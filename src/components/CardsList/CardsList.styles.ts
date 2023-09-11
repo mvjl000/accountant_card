@@ -16,4 +16,7 @@ export const Wrapper = styled.ul`
   ${({ theme }) => theme.mq.lg} {
     grid-template-columns: repeat(4, 1fr);
   }
+  ${({ theme }) => theme.mq.xl} {
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
