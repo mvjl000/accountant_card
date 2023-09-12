@@ -11,6 +11,11 @@ export const StyledButton = styled.button`
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+
+  &:disabled {
+    background-color: #efefef;
+    color: #aaa;
+  }
 `;
 
 export const FilterWrapper = styled.div`
@@ -25,4 +30,11 @@ export const FilterWrapper = styled.div`
     color: ${({ theme }) => theme.font.colors.brand};
     font-size: 1.1rem;
   }
+`;
+
+export const ErrorMessage = styled.p`
+  margin: 100px 0;
+  font-size: 3rem;
+  color: red;
+  text-align: center;
 `;
