@@ -1,11 +1,11 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchData } from "api";
 
-export const useInfiniteAccountants = () => {
+export const useInfiniteAccountants = (resultsPerPage: number) => {
   const query = useInfiniteQuery(
-    ["accountants"],
+    ["accountants", resultsPerPage],
     async ({ pageParam = 1 }) => {
-      const response = await fetchData(pageParam);
+      const response = await fetchData(pageParam, resultsPerPage);
       return response;
     },
     {

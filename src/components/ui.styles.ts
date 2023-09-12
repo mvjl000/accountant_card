@@ -12,3 +12,17 @@ export const StyledButton = styled.button`
   text-decoration: none;
   cursor: pointer;
 `;
+
+export const FilterWrapper = styled.div`
+  width: 25%;
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  label {
+    margin-left: 3px;
+    color: ${({ theme }) => theme.font.colors.brand};
+    font-size: 1.1rem;
+  }
+`;

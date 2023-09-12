@@ -1,3 +1,5 @@
+import { API_URL } from "config";
+
 export type AccountantType = {
   cell: string; // numer telefonu
   name: {
@@ -19,10 +21,12 @@ export type AccountantResponseType = {
   };
 };
 
-const API_URL = "https://randomuser.me/api/";
+export const fetchData = async (page: number, resultsPerPage: number) => {
+  const response = await fetch(
+    `${API_URL}?seed=abc&page=${page}&results=${resultsPerPage}`
+  );
 
-export const fetchData = async (page: number) => {
-  const response = await fetch(`${API_URL}?seed=abc&page=${page}&results=5`);
   const data: AccountantResponseType = await response.json();
+
   return data;
 };
