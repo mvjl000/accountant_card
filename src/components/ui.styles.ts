@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const StyledButton = styled.button`
+const ButtonStyles = css`
   display: block;
   padding: 8px 16px;
   border: 1px solid transparent;
@@ -11,6 +11,10 @@ export const StyledButton = styled.button`
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+`;
+
+export const StyledButton = styled.button`
+  ${ButtonStyles};
 
   &:disabled {
     background-color: #efefef;
@@ -18,7 +22,9 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const ButtonLink = styled(StyledButton)`
+export const ButtonLink = styled.a`
+  ${ButtonStyles};
+
   &:hover {
     text-decoration: underline;
   }

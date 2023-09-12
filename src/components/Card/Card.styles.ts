@@ -1,4 +1,4 @@
-import { StyledButton } from "components/ui.styles";
+import { ButtonLink } from "components/ui.styles";
 import styled, { keyframes } from "styled-components";
 
 export const Wrapper = styled.li`
@@ -13,7 +13,7 @@ export const Wrapper = styled.li`
   border-radius: 16px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 
-  ${StyledButton} {
+  ${ButtonLink} {
     margin-top: 24px;
   }
 `;

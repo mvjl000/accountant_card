@@ -55,7 +55,7 @@ export const Card = ({ accountant }: CardProps) => {
           </p>
         </div>
       </DetailsWrapper>
-      <ButtonLink as="a" href={`/accountant/${accountant.login.uuid}`}>
+      <ButtonLink href={`/accountant/${accountant.login.uuid}`}>
         Dowiedz się więcej
       </ButtonLink>
     </Wrapper>

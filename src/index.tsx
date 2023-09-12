@@ -25,9 +25,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <LandingLinkWrapper>
-        <ButtonLink as="a" href="/ksiegowi">
-          Poznaj księgowych
-        </ButtonLink>
+        <ButtonLink href="/ksiegowi">Poznaj księgowych</ButtonLink>
       </LandingLinkWrapper>
     ),
   },
