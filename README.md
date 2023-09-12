@@ -1,5 +1,7 @@
 # Zadanie testowe na pozycję React Developer
 
+Here is the [deploy](https://accountant-card.vercel.app/)
+
 ## How to start
 
 In the project directory, you can run:
@@ -41,3 +43,7 @@ Honestly **Tanstack** was a no brainer, because of how easy it is there to imple
 
 Not gonna lie, I chose styled-components because You mentioned it as prefered ;) But it was a good experience, I used to style a lot with CSS-in-JS.
 If it were not for your suggestion, I would most likely choose tailwind, my daily go-to.
+
+### Where is eslint / prettier (You may ask)?
+
+It is a very small project I worked on alone. I decided that the solutions built into the IDE would be enough. But I'm aware that for bigger projects it is necessary ;)
