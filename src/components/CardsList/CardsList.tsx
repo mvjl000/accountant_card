@@ -1,10 +1,10 @@
+import { Fragment } from "react";
+import { resultsPerPageAtom } from "atoms";
+import { useAtom } from "jotai";
+import { useInfiniteAccountants } from "useInfiniteAccountants";
 import { Card } from "components/Card/Card";
 import { CardSkeleton } from "components/Card/Card.styles";
 import { Wrapper } from "components/CardsList/CardsList.styles";
-import { Fragment } from "react";
-import { useInfiniteAccountants } from "useInfiniteAccountants";
-import { useAtom } from "jotai";
-import { resultsPerPageAtom } from "atoms";
 import { ErrorMessage } from "components/ui.styles";
 
 const renderNSkeletons = (num: number) =>

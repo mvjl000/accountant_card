@@ -28,7 +28,8 @@ npm run start
   1. `/` - 'Landing' with link to `/ksiegowi`
   2. `/ksiegowi` - List of accountants
      Additionaly very simple 404 route
-- Some small but pleasant details like random price for service & `twój/twoja` basing on gender
+- Some small but pleasant details like random price for service & `twój/twoja` basing on gender,
+- Type-safe styled-components theme
 
 ## My libraries / packages decisions
 

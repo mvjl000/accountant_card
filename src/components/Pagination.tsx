@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   gap: 40px;
 `;
 
-export const LoadMoreButton = () => {
+export const Pagination = () => {
   const [resultsPerPage, setResultsPerPage] = useAtom(resultsPerPageAtom);
   const { fetchNextPage, isFetchingNextPage } =
     useInfiniteAccountants(resultsPerPage);

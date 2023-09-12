@@ -1,18 +1,18 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
-import "styles/index.css";
-import { App } from "App";
-import { Layout } from "Layout";
-import { ThemeProvider } from "styled-components";
-import { theme } from "styles/theme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider as JotaiProvider } from "jotai";
+import { App } from "App";
+import { Layout } from "components/Layout";
+import { ThemeProvider } from "styled-components";
+import { theme } from "styles/theme";
 import {
   ButtonLink,
   ErrorMessage,
   LandingLinkWrapper,
 } from "components/ui.styles";
+import "styles/index.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

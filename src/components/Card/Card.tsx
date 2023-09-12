@@ -22,6 +22,7 @@ type CardProps = {
 
 export const Card = ({ accountant }: CardProps) => {
   const price = useRef(generateRandomPrice());
+
   const { name, email, cell, gender } = accountant;
   const accountantName = `${name.first} ${name.last}`;
 

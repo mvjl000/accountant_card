@@ -1,11 +1,11 @@
 import { CardsList } from "components/CardsList/CardsList";
-import { LoadMoreButton } from "components/LoadMoreButton";
+import { Pagination } from "components/Pagination";
 
 export const App = () => {
   return (
     <>
       <CardsList />
-      <LoadMoreButton />
+      <Pagination />
     </>
   );
 };

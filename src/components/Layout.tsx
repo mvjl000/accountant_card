@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import inFaktLogo from "assets/infakt_logo.png";
 import styled from "styled-components";
+import inFaktLogo from "assets/infakt_logo.png";
 
 const StyledNav = styled.nav`
   padding: 16px 28px;
