@@ -5,14 +5,19 @@ import { Fragment } from "react";
 import { useInfiniteAccountants } from "useInfiniteAccountants";
 import { useAtom } from "jotai";
 import { resultsPerPageAtom } from "atoms";
+import { ErrorMessage } from "components/ui.styles";
 
 const renderNSkeletons = (num: number) =>
   Array.from(Array(num).keys()).map((item) => <CardSkeleton key={item} />);
 
 export const CardsList = () => {
   const [resultsPerPage] = useAtom(resultsPerPageAtom);
-  const { data, isLoading, isFetchingNextPage } =
+  const { data, isLoading, isError, isFetchingNextPage } =
     useInfiniteAccountants(resultsPerPage);
+
+  if (isError) {
+    return <ErrorMessage>Upssss, nie zobaczysz księgowych :/</ErrorMessage>;
+  }
 
   if (isLoading) {
     return <Wrapper>{renderNSkeletons(resultsPerPage)}</Wrapper>;
