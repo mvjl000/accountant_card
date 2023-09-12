@@ -6,7 +6,7 @@ import {
   NameWrapper,
   DetailsWrapper,
 } from "components/Card/Card.styles";
-import { StyledButton } from "components/ui.styles";
+import { ButtonLink } from "components/ui.styles";
 import { useRef } from "react";
 
 const generateRandomPrice = () => {
@@ -54,9 +54,9 @@ export const Card = ({ accountant }: CardProps) => {
           </p>
         </div>
       </DetailsWrapper>
-      <StyledButton as="a" href="/accountant">
+      <ButtonLink as="a" href={`/accountant/${accountant.login.uuid}`}>
         Dowiedz się więcej
-      </StyledButton>
+      </ButtonLink>
     </Wrapper>
   );
 };

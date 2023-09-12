@@ -18,6 +18,12 @@ export const StyledButton = styled.button`
   }
 `;
 
+export const ButtonLink = styled(StyledButton)`
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export const FilterWrapper = styled.div`
   width: 25%;
   max-width: 150px;
@@ -37,4 +43,11 @@ export const ErrorMessage = styled.p`
   font-size: 3rem;
   color: red;
   text-align: center;
+`;
+
+export const LandingLinkWrapper = styled.div`
+  margin-top: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

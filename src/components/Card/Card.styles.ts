@@ -15,10 +15,6 @@ export const Wrapper = styled.li`
 
   ${StyledButton} {
     margin-top: 24px;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 `;
 

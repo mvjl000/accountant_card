@@ -37,7 +37,9 @@ type LayoutProps = {
 export const Layout = ({ children }: LayoutProps) => (
   <>
     <StyledNav>
-      <img src={inFaktLogo} alt="inFakt" />
+      <a href="/">
+        <img src={inFaktLogo} alt="inFakt" />
+      </a>
     </StyledNav>
     <StyledMainContent>{children}</StyledMainContent>
   </>
