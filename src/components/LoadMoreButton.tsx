@@ -17,7 +17,8 @@ const Wrapper = styled.div`
 
 export const LoadMoreButton = () => {
   const [resultsPerPage, setResultsPerPage] = useAtom(resultsPerPageAtom);
-  const { fetchNextPage } = useInfiniteAccountants(resultsPerPage);
+  const { fetchNextPage, isFetchingNextPage } =
+    useInfiniteAccountants(resultsPerPage);
   const queryClient = useQueryClient();
 
   return (
@@ -41,7 +42,10 @@ export const LoadMoreButton = () => {
           }}
         />
       </FilterWrapper>
-      <StyledButton onClick={() => fetchNextPage()}>
+      <StyledButton
+        onClick={() => fetchNextPage()}
+        disabled={isFetchingNextPage}
+      >
         Pobierz więcej
       </StyledButton>
     </Wrapper>
