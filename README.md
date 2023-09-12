@@ -22,7 +22,7 @@ npm run start
 - Styled-components
 - React & Typescript - obviously
 
-## Features
+## Features / code quality
 
 - Handling of both loading and error states,
 - Besides of basic functionality (fetching more accountants), I decided to add 'filter' that allows the user to select how many accountants should be fetched per click (I also wanted to add a gender filter but it turned out that when the `seed parameter` is provided, the API doesn't care about it and returns both female and male :') ),
@@ -32,6 +32,7 @@ npm run start
      Additionaly very simple 404 route
 - Some small but pleasant details like random price for service & `twój/twoja` basing on gender,
 - Type-safe styled-components theme
+- Absolute imports
 
 ## My libraries / packages decisions
 
